@@ -44,7 +44,7 @@ void test_create_sound_data(void) {
 
 void test_persist_sound(void) {
   az_soundboard_t soundboard = { .num_persists = 0 };
-  const az_sound_data_t sound1, sound2, sound3, sound4;
+  const az_sound_data_t sound1 = {0}, sound2 = {0}, sound3 = {0}, sound4 = {0};
   az_persist_sound_data(&soundboard, &sound1, 1);
   az_reset_sound_data(&soundboard, &sound2);
   az_hold_sound_data(&soundboard, &sound3);
@@ -75,7 +75,7 @@ void test_persist_sound(void) {
 
 void test_sound_volume(void) {
   az_soundboard_t soundboard = { .num_oneshots = 0, .num_persists = 0 };
-  const az_sound_data_t sound1, sound2, sound3, sound4;
+  const az_sound_data_t sound1 = {0}, sound2 = {0}, sound3 = {0}, sound4 = {0};
 
   // Perform a sequence of operations with persisted sounds, and make sure the
   // volumes come out right.

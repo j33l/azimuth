@@ -31,6 +31,7 @@
 #include "azimuth/state/player.h"
 #include "azimuth/state/save.h"
 #include "azimuth/util/misc.h"
+#include "azimuth/util/prefs.h"
 #include "azimuth/util/polygon.h"
 #include "azimuth/util/vector.h"
 #include "azimuth/version.h"
@@ -532,6 +533,7 @@ static void draw_about_box(void) {
     do_polygon(GL_LINE_LOOP, about_box_polygon);
 
     az_preferences_t prefs;
+    az_reset_prefs_to_defaults(&prefs);
     az_draw_paragraph(8, AZ_ALIGN_LEFT, 8, 8, 15, -1, &prefs,
                       about_box_paragraph);
     az_draw_string(8, AZ_ALIGN_RIGHT, ABOUT_BOX_WIDTH - 8,
